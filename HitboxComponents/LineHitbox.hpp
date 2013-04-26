@@ -1,4 +1,4 @@
-#include "../HitboxComponent.hpp"
+#include "HitboxComponent.hpp"
 
 class LineHitbox: public HitboxComponent
 {

@@ -1,38 +1,31 @@
-#include "../GraphicComponent.hpp"
-#include "../Debug.hpp"
+#include "GraphicComponent.hpp"
+#include "Debug.hpp"
 
-template<class G> class ShotGraphic: public GraphicComponent
+class ShotGraphic: public GraphicComponent
 {
 	public:
-		ShotGraphic(G *_g, int _speed = 5)
+		ShotGraphic(GraphicPrimitive *_graphicPrimitive, int _speed = 5)
 		{
-			g = _g;
+			graphicPrimitive = _graphicPrimitive;
 			speed = _speed;
-			R = g->getRadius();
-			circle.setFillColor(g->getAverageColor());
+//			R = graphicPrimitive->getRadius();
+//			circle.setFillColor(g->getAverageColor());
 			counter = _speed;
 			collision = false;
 		}
 
 		virtual ~ShotGraphic()
 		{
-			delete g;
+			delete graphicPrimitive;
 		}
 
 		virtual void updateCommon() 
 		{
-			g->update();
+			graphicPrimitive->update();
 		}
 
 		void setCollision() {collision = true;}
 
-		void setAlpha(unsigned char a)
-		{
-			sf::Color c = circle.getFillColor();
-			c.a = a;
-			circle.setFillColor(c);
-			g->setAlpha(a);
-		}
 
 		/*virtual void updateAppearing()
 		{
@@ -86,25 +79,29 @@ template<class G> class ShotGraphic: public GraphicComponent
 			return false;
 		}
 
-		virtual float getRadius() {return g->getRadius();}
+		virtual float getRadius() {return graphicPrimitive->getRadius();}
 
-		G *getG() {return g;}
+		GraphicPrimitive *getGraphicPrimitive() {return graphicPrimitive;}
 
 	protected:
 		void draw(sf::RenderTarget &target, sf::RenderStates states) const
 		{
-			if(counter != 0)
-				target.draw(circle);
-			target.draw(*g);
+/*			if(counter != 0)
+				target.draw(circle);*/
+			target.draw(*graphicPrimitive);
 		}
 
 	private:
-		sf::CircleShape circle;
 		int speed;
 		int counter;
-		int R;
+//		int R;
 		bool collision;
-		G *g;
+		GraphicPrimitive *graphicPrimitive;
+
+		void setAlpha(unsigned char a)
+		{
+			graphicPrimitive->setAlpha(a);
+		}
 };
 
 

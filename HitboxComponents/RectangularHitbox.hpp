@@ -1,4 +1,4 @@
-#include "../HitboxComponent.hpp"
+#include "HitboxComponent.hpp"
 #include "CircularHitbox.hpp"
 
 class RectangularHitbox: public HitboxComponent

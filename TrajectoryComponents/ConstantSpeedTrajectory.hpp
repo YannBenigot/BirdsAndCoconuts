@@ -1,7 +1,7 @@
 #ifndef _CONSTANTSPEEDTRAJECTORY_HPP
 #define _CONSTANTSPEEDTRAJECTORY_HPP
 
-#include "../TrajectoryComponent.hpp"
+#include "TrajectoryComponent.hpp"
 
 class ConstantSpeedTrajectory: public TrajectoryComponent
 {

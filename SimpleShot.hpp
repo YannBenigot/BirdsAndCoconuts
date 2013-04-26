@@ -1,8 +1,9 @@
 #include "Shot.hpp"
-#include "Sprite.hpp"
+#include "GraphicPrimitives/Sprite.hpp"
 #include "Debug.hpp"
 #include "TrajectoryComponents/ConstantSpeedTrajectory.hpp"
 #include "HitboxComponents/CircularHitbox.hpp"
+#include "GraphicComponents/ShotGraphic.hpp"
 
 #include <math.h>
 
@@ -13,14 +14,14 @@ class SimpleShot: public Shot
 		{
 			pos = _pos;
 			opos = pos;
-			graphicComponent = new ShotGraphic<Sprite>(new Sprite(res, pos));
-			hitboxComponent = new CircularHitbox(pos, opos, ((ShotGraphic<Sprite> *)graphicComponent)->getRadius());
+			graphicComponent = new ShotGraphic(new Sprite(res, pos));
+			hitboxComponent = new CircularHitbox(pos, opos, graphicComponent->getRadius());
 			setMode(ALIVE);
 		}
 
 		virtual void onCollision(Thing &thing) 
 		{
-			((ShotGraphic<Sprite> *)graphicComponent)->setCollision();
+			((ShotGraphic *)graphicComponent)->setCollision();
 			trajectoryComponent = new ConstantSpeedTrajectory(pos, opos-pos);
 			setMode(DYING);
 		}

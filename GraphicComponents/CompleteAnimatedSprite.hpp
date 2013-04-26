@@ -1,8 +1,8 @@
 #ifndef _COMPLETEANIMATEDSPRITE_HPP
 #define _COMPLETEANIMATEDSPRITE_HPP
 
-#include "../GraphicComponent.hpp"
-#include "../AnimatedSprite.hpp"
+#include "GraphicComponent.hpp"
+#include "GraphicPrimitives/AnimatedSprite.hpp"
 
 class CompleteAnimatedSprite: public GraphicComponent
 {

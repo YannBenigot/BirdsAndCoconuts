@@ -11,16 +11,16 @@ const int SHADOW_X = 5, SHADOW_Y = 5;
 
 AnimatedSprite::AnimatedSprite(AnimatedSpriteBaseResource asBaseRes, sf::Vector2f &pos, int speed, bool loop): speed(speed), counter(speed), mode(0), pos(pos), asbase(ResourceManager::get()->getASBase(asBaseRes)), loop(loop)
 {
-	setTexture(asbase.texture, true);
+	sprite.setTexture(asbase.texture, true);
 
-	setOrigin(asbase.width/2, asbase.height/2);
+	sprite.setOrigin(asbase.width/2, asbase.height/2);
 
 	flipped = false;
 	endReached = false;
 	counter = speed;
 	mode = 0;
 	currentRect = asbase.rects[mode].begin();
-	setTextureRect(*currentRect);
+	sprite.setTextureRect(*currentRect);
 }
 
 AnimatedSprite::~AnimatedSprite()
@@ -29,7 +29,7 @@ AnimatedSprite::~AnimatedSprite()
 
 void AnimatedSprite::update()
 {
-	setPosition(pos);
+	sprite.setPosition(pos);
 	if(speed < 0) return;
 	counter--;
 	if(counter < 0)
@@ -46,7 +46,7 @@ void AnimatedSprite::update()
 				currentRect--;
 			}
 		}
-		setTextureRect(*currentRect);
+		sprite.setTextureRect(*currentRect);
 	}
 }
 
@@ -59,7 +59,7 @@ void AnimatedSprite::setMode(int _mode, bool _loop)
 {
 	mode = _mode;
 	currentRect = asbase.rects[mode].begin();
-	setTextureRect(*currentRect);
+	sprite.setTextureRect(*currentRect);
 	endReached = false;
 	loop = _loop;
 }
@@ -74,10 +74,10 @@ void AnimatedSprite::setFlip(bool _flipped)
 	flipped = _flipped;
 	if(flipped)
 	{
-		setScale(-1, 1);
+		sprite.setScale(-1, 1);
 	}
 	else
 	{
-		setScale(1, 1);
+		sprite.setScale(1, 1);
 	}
 }

@@ -3,7 +3,7 @@
 
 #include <SFML/Graphics.hpp>
 
-class GraphicComponent: public sf::Drawable
+class GraphicComponent: public sf::Drawable, public sf::Transformable
 {
 	public:
 		virtual ~GraphicComponent() {};

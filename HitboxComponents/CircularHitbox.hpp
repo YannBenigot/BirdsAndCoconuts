@@ -1,7 +1,7 @@
 #ifndef _CIRCULARHITBOX_HPP
 #define _CIRCULARHITBOX_HPP
 
-#include "../HitboxComponent.hpp"
+#include "HitboxComponent.hpp"
 
 class CircularHitbox: public HitboxComponent
 {
