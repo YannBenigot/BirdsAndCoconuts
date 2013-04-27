@@ -1,9 +1,13 @@
+#ifndef _GAME_HPP
+#define _GAME_HPP
+
 #include <list>
 #include <SFML/Graphics.hpp>
 #include <SFML/Window.hpp>
 #include "Player.hpp"
-#include "Enemy.hpp"
 #include "Shot.hpp"
+#include "Enemy.hpp"
+
 
 class Game: public sf::Drawable
 {
@@ -20,10 +24,12 @@ class Game: public sf::Drawable
 		virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 
 	private:
-//		Level level;
+//		Level *level;
 		Player player;
 
 		std::list<Enemy *> enemies;
 		std::list<Shot *> enemyShots;
 		std::list<Shot *> playerShots;
 };
+
+#endif

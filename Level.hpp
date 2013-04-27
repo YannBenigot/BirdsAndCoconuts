@@ -1,8 +1,17 @@
-class Level: public Entity
+#include <SFML/Graphics.hpp>
+
+class Level: public sf::Drawable
 {
 	public:
-		Level();
-		virtual void reset() = 0;
+		Level(Game &game): game(game), counter(0) {};
 
-		virtual void spawnThing(Thing &thing);
-		
+		Level *update() {counter++; return doUpdate;}
+
+		virtual Level *doUpdate() = 0;
+
+	protected:
+		Game &game;
+		int counter;
+		virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const = 0;
+};
+			

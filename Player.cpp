@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include "Game.hpp"
 #include "RadialShot.hpp"
-#include "TrajectoryComponents/ConstantSpeedTrajectory.hpp"
+#include "TrajectoryComponents/PlayerTrajectory.hpp"
 #include "HitboxComponents/CircularHitbox.hpp"
 
 #include <time.h>
@@ -12,7 +12,7 @@ Player::Player(Game &game): caSprite(CompleteAnimatedSprite(ASBASE_TEST, pos, 10
 	graphicComponent = &caSprite;
 	hitboxComponent = new CircularHitbox(pos, opos, 1);
 	srand(time(NULL));
-	trajectoryComponent = new ConstantSpeedTrajectory(pos, sf::Vector2f(0, 0));
+	trajectoryComponent = new PlayerTrajectory(pos);
 	setMode(APPEARING);
 }
 
