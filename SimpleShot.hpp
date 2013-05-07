@@ -1,5 +1,5 @@
 #include "Shot.hpp"
-#include "GraphicPrimitives/Sprite.hpp"
+#include "GraphicComponents/GraphicPrimitives/Sprite.hpp"
 #include "Debug.hpp"
 #include "TrajectoryComponents/ConstantSpeedTrajectory.hpp"
 #include "HitboxComponents/CircularHitbox.hpp"

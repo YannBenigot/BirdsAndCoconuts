@@ -1,15 +1,13 @@
 #include "GraphicComponent.hpp"
 #include "Debug.hpp"
 
-class ShotGraphic: public GraphicComponent
+class ShotGraphic: public GraphicComponentEmbeddedTransformable
 {
 	public:
-		ShotGraphic(GraphicPrimitive *_graphicPrimitive, int _speed = 5)
+		ShotGraphic(GraphicPrimitive *_graphicPrimitive, int _speed = 5): GraphicComponentEmbeddedTransformable(*_graphicPrimitive)
 		{
 			graphicPrimitive = _graphicPrimitive;
 			speed = _speed;
-//			R = graphicPrimitive->getRadius();
-//			circle.setFillColor(g->getAverageColor());
 			counter = _speed;
 			collision = false;
 		}
@@ -26,27 +24,6 @@ class ShotGraphic: public GraphicComponent
 
 		void setCollision() {collision = true;}
 
-
-		/*virtual void updateAppearing()
-		{
-			circle.setPosition(g->getPosition());
-			if(counter > speed/2)
-			{
-				float ratio = 1-((float)counter - speed/2)*2/speed;
-				circle.setRadius(ratio*R);
-				circle.setAlpha(ratio*255);
-			}
-			else
-			{
-				float ratio = ((float)speed/2-counter)*2/speed;
-				circle.setRadius((1+ratio)*R);
-				circle.setAlpha(ratio*255);
-			}
-			counter--;
-			if(counter < 0)
-				setMode(ALIVE);
-		}*/
-
 		virtual void onSetAlive()
 		{
 			counter = 0;
@@ -61,47 +38,19 @@ class ShotGraphic: public GraphicComponent
 		{
 			float ratio = ((float)speed-counter)/speed;
 			counter--;
-/*			if(collision)
-			{
-				int nR = ratio*R;
-				circle.setRadius(nR);
-				circle.setOrigin(nR/2, nR/2);
-				circle.setPosition(g->getPosition());
-				setAlpha((1-ratio)*255);
-			}
-			else
-			{
-				g->setAlpha((1-ratio)*255);
-			}*/
-			setAlpha((1-ratio)*255);
+			setOpacity(1-ratio);
 			if(counter < 0)
 				return true;
 			return false;
 		}
 
-		virtual float getRadius() {return graphicPrimitive->getRadius();}
-
 		GraphicPrimitive *getGraphicPrimitive() {return graphicPrimitive;}
-
-	protected:
-		void draw(sf::RenderTarget &target, sf::RenderStates states) const
-		{
-/*			if(counter != 0)
-				target.draw(circle);*/
-			target.draw(*graphicPrimitive);
-		}
 
 	private:
 		int speed;
 		int counter;
-//		int R;
 		bool collision;
 		GraphicPrimitive *graphicPrimitive;
-
-		void setAlpha(unsigned char a)
-		{
-			graphicPrimitive->setAlpha(a);
-		}
 };
 
 

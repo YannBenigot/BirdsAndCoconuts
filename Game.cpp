@@ -4,6 +4,14 @@
 
 Game::Game(): player(Player(*this))
 {
+	layers = new Layer[Layer::COUNT]();
+	sprites = new sf::Sprite[Layer::COUNT]();
+
+	for(int i=0; i<Layer::COUNT; i++)
+	{
+		layers[i].create(640, 480);
+		sprites[i].setTexture(layers[i].getTexture());
+	}
 }
 
 void Game::manageInput(sf::Event &ev)
@@ -81,17 +89,25 @@ void Game::update()
 	cleanup<Shot>(playerShots);
 }
 
-template<class T> void listDraw (const std::list<T *> &l, sf::RenderTarget &target, sf::RenderStates states)
+template<class T> void listDraw (const std::list<T *> &l, Layer *layers)
 {
 	for(auto it = l.begin(); it != l.end(); it++)
-		target.draw(**it, states);
+		(**it).draw(layers);
 }
 
 void Game::draw(sf::RenderTarget &target, sf::RenderStates states) const
 {
 //	level.draw(target, states);
-	listDraw<Shot>(playerShots, target, states);
-	listDraw<Shot>(enemyShots, target, states);
-	listDraw<Enemy>(enemies, target, states);
-	target.draw(player, states);
+	for(int i=0; i<Layer::COUNT; i++)
+		layers[i].clear(sf::Color(255, 255, 255, 0));
+	layers[Layer::BACKGROUND].clear(sf::Color(128, 128, 128, 255));
+	listDraw<Shot>(playerShots, layers);
+	listDraw<Shot>(enemyShots, layers);
+	listDraw<Enemy>(enemies, layers);
+	player.draw(layers);
+	for(int i=0; i<Layer::COUNT; i++)
+	{
+		layers[i].display();
+		target.draw(sprites[i]);
+	}
 }

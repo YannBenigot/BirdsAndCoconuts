@@ -8,7 +8,7 @@
 #include "Vector.hpp"
 #include "Debug.hpp"
 
-class Thing: public sf::Drawable
+class Thing: public Drawable
 {
 	public:
 		Thing() 
@@ -40,6 +40,8 @@ class Thing: public sf::Drawable
 		GraphicComponent *graphicComponent;
 		TrajectoryComponent *trajectoryComponent;
 
+		virtual void draw(Layer *layers) const {if(mode != DEAD) graphicComponent->draw(layers);}
+
 		void printDBG() {DBG(pos << " - " << opos);}
 	protected:
 		enum Mode {APPEARING, ALIVE, DYING, DEAD};
@@ -51,7 +53,6 @@ class Thing: public sf::Drawable
 
 		bool updatePosAppearing, updatePosDying;
 
-		virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const {if(mode != DEAD) target.draw(*graphicComponent, states);}
 	private:
 		enum Mode mode;
 };

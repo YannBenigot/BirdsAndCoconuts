@@ -7,7 +7,7 @@
 #include "Player.hpp"
 #include "Shot.hpp"
 #include "Enemy.hpp"
-
+#include "Graphics.hpp"
 
 class Game: public sf::Drawable
 {
@@ -25,6 +25,9 @@ class Game: public sf::Drawable
 
 	private:
 //		Level *level;
+		Layer *layers;
+		sf::Sprite *sprites;
+
 		Player player;
 
 		std::list<Enemy *> enemies;

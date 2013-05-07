@@ -1,5 +1,5 @@
-SUBDIRS = GraphicPrimitives HitboxComponents GraphicComponents TrajectoryComponents
-OBJS = $(patsubst %.cpp,%.o,$(wildcard *.cpp)) $(foreach dir, $(SUBDIRS), $(patsubst %.cpp,%.o,$(wildcard $(dir)/*.cpp)))
+SUBDIRS = GraphicPrimitives HitboxComponents GraphicComponents TrajectoryComponents GraphicComponents/GraphicPrimitives
+OBJS = $(patsubst %.cpp,%.o,$(wildcard *.cpp)) $(foreach dir, $(SUBDIRS), $(patsubst %.cpp,%.o,$(wildcard $(dir)/*.cpp))) 
 DEPS = $(wildcard *.hpp) $(foreach dir, $(SUBDIRS), $(wildcard $dir/*.hpp))
 CFLAGS = -O0 -std=c++0x -I$(PWD) -g #-pedantic-errors -Wall -Wextra -Werror 
 LDFLAGS = -lsfml-audio -lsfml-graphics -lsfml-window -lsfml-system -g

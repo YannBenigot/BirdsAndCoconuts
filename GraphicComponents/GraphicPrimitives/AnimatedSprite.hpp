@@ -1,16 +1,15 @@
 #ifndef SPRITE_H
 #define SPRITE_H
 
-#include <SFML/Graphics.hpp>
-#include "../GraphicPrimitive.hpp"
-#include "../ResourceManager.hpp"
+#include "GraphicPrimitiveSFML.hpp"
+#include "ResourceManager.hpp"
 
-class AnimatedSprite : public GraphicPrimitive 
+class AnimatedSprite : public GraphicPrimitiveSFMLSprite
 {
 	public:
 		AnimatedSprite(AnimatedSpriteBaseResource asBaseRes, sf::Vector2f &pos, int speed, bool loop=true);
 		~AnimatedSprite();
-		void update();
+
 		void setSpeed(int speed);
 		void setMode(int mode, bool loop = true);
 		void flip();
@@ -18,10 +17,9 @@ class AnimatedSprite : public GraphicPrimitive
 		bool isEndReached() {return endReached;};
 
 		virtual float getRadius() {return 1;}
-		virtual void setAlpha(unsigned char a) {throw "NI";}
+		virtual void update();
+		virtual void draw(Layer *layers) const;
 
-	protected:
-		virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const {target.draw(sprite, states);}
 	private:
 		sf::Sprite sprite;
 

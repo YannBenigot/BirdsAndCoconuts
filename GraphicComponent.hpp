@@ -1,9 +1,9 @@
 #ifndef _GRAPHICCOMPONENT_H
 #define _GRAPHICCOMPONENT_H
 
-#include <SFML/Graphics.hpp>
+#include "Graphics.hpp"
 
-class GraphicComponent: public sf::Drawable, public sf::Transformable
+class GraphicComponent: public Transformable
 {
 	public:
 		virtual ~GraphicComponent() {};
@@ -17,6 +17,13 @@ class GraphicComponent: public sf::Drawable, public sf::Transformable
 		virtual void onSetDying() {};
 
 		virtual float getRadius() {return 0;};
+
+		// Inherited
+		virtual void draw(Layer *layers) const = 0;
+		virtual void rotate(float angle) = 0;
+		virtual void scale(float factor) = 0;
+		virtual void scale(sf::Vector2f factor) = 0;
+
 };
 
 #endif

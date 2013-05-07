@@ -1,25 +1,23 @@
 #ifndef _COMPLETEANIMATEDSPRITE_HPP
 #define _COMPLETEANIMATEDSPRITE_HPP
 
-#include "GraphicComponent.hpp"
+#include "GraphicComponentEmbeddedTransformable.hpp"
 #include "GraphicPrimitives/AnimatedSprite.hpp"
 
-class CompleteAnimatedSprite: public GraphicComponent
+class CompleteAnimatedSprite: public GraphicComponentEmbeddedTransformable
 {
 	public:
-		CompleteAnimatedSprite(AnimatedSpriteBaseResource res, sf::Vector2f &pos, int speed): asprite(AnimatedSprite(res, pos, speed)) {};
+		CompleteAnimatedSprite(AnimatedSpriteBaseResource res, sf::Vector2f &pos, int speed): asprite(AnimatedSprite(res, pos, speed)), GraphicComponentEmbeddedTransformable(asprite) {};
 		virtual ~CompleteAnimatedSprite() {};
 		virtual void updateCommon() {asprite.update();};
 
 		virtual void onSetAppearing() {asprite.setMode(0, false);};
 		virtual void onSetAlive() {asprite.setMode(1, true);};
 		virtual void onSetDying() {asprite.setMode(2, false);};
-		virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const {target.draw(asprite, states);}
 		virtual bool updateAppearing() {return asprite.isEndReached();}
 		virtual bool updateDying() {return asprite.isEndReached();}
-		AnimatedSprite asprite;
 		
-		virtual float getRadius() {return 0;};
+		AnimatedSprite asprite;
 	private:
 };
 
