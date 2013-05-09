@@ -56,3 +56,20 @@ void Thing::setMode(Mode _mode)
 			break;
 	}
 }
+
+void Thing::setHitboxComponent(HitboxComponent *_hitboxComponent)
+{
+	hitboxComponent = _hitboxComponent;
+}
+
+void Thing::setGraphicComponent(GraphicComponent *_graphicComponent)
+{
+	graphicComponent = _graphicComponent;
+}
+
+void Thing::setTrajectoryComponent(TrajectoryComponent *_trajectoryComponent)
+{
+	trajectoryComponent = _trajectoryComponent;
+	trajectoryComponent->init(pos);
+}
+

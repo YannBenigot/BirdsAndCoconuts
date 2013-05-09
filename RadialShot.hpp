@@ -9,7 +9,7 @@ class RadialShot: public SimpleShot
 		{
 //			if(v.x != 0 || v.y != 0) 
 //				graphicComponent->rotate(atan2(v.y, v.x));
-			trajectoryComponent = new ConstantSpeedTrajectory(pos, v);
+			setTrajectoryComponent(new ConstantSpeedTrajectory(v));
 		};
 
 	private:

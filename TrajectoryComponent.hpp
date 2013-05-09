@@ -6,10 +6,12 @@
 class TrajectoryComponent
 {
 	public:
-		TrajectoryComponent(sf::Vector2f &pos): pos(pos) {};
+		TrajectoryComponent() {pos = nullptr;}
+		void init(sf::Vector2f &_pos) {pos = &_pos;}
+
 		virtual void updatePosition() = 0;
 	protected:
-		sf::Vector2f &pos;
+		sf::Vector2f *pos;
 };
 
 #endif

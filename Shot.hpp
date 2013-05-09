@@ -8,10 +8,10 @@ class Shot: public Thing
 	virtual void updateCommon()
 	{
 		if(
-				pos.x < -graphicComponent->getRadius() 
-				|| pos.x > 640 + graphicComponent->getRadius() 
-				|| pos.y < -graphicComponent->getRadius()
-				|| pos.y > 480 + graphicComponent->getRadius())
+				pos.x < -getGraphicComponent()->getRadius() 
+				|| pos.x > 640 + getGraphicComponent()->getRadius() 
+				|| pos.y < -getGraphicComponent()->getRadius()
+				|| pos.y > 480 + getGraphicComponent()->getRadius())
 			setMode(DEAD);
 	}
 };

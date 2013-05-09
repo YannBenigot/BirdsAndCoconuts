@@ -16,9 +16,13 @@ class Thing: public Drawable
 			mode = DEAD; // Should be overwritten by child constructor, using a setMode() call
 			updatePosAppearing = true;
 			updatePosDying = true;
+			hitboxComponent = nullptr;
+			trajectoryComponent = nullptr;
+			graphicComponent = nullptr;
 		}
 
 		void update();
+
 		virtual void updateCommon() {};
 		virtual void updateAppearing() {};
 		virtual void updateAlive() {};
@@ -36,9 +40,15 @@ class Thing: public Drawable
 		bool dead() {return mode == DEAD;};
 		bool alive() {return mode == ALIVE;};
 
-		HitboxComponent *hitboxComponent;
-		GraphicComponent *graphicComponent;
-		TrajectoryComponent *trajectoryComponent;
+		void setHitboxComponent(HitboxComponent *_hitboxComponent);
+		HitboxComponent *getHitboxComponent() {return hitboxComponent;};
+
+		void setTrajectoryComponent(TrajectoryComponent *_trajectoryComponent);
+		TrajectoryComponent *getTrajectoryComponent() {return trajectoryComponent;};
+
+		void setGraphicComponent(GraphicComponent *_graphicComponent);
+		GraphicComponent *getGraphicComponent() {return graphicComponent;};
+
 
 		virtual void draw(Layer *layers) const {if(mode != DEAD) graphicComponent->draw(layers);}
 
@@ -55,6 +65,10 @@ class Thing: public Drawable
 
 	private:
 		enum Mode mode;
+
+		HitboxComponent *hitboxComponent;
+		GraphicComponent *graphicComponent;
+		TrajectoryComponent *trajectoryComponent;
 };
 
 #endif

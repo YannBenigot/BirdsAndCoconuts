@@ -12,9 +12,9 @@ class SimpleEnemy: public Enemy
 		{
 			pos = _pos;
 			opos = _pos;
-			graphicComponent = new CompleteAnimatedSprite(res, pos, spriteSpeed);
-			hitboxComponent = new CircularHitbox(pos, opos, graphicComponent->getRadius());
-			trajectoryComponent = new ConstantSpeedTrajectory(pos, v);
+			setGraphicComponent(new CompleteAnimatedSprite(res, pos, spriteSpeed));
+			setHitboxComponent(new CircularHitbox(pos, opos, getGraphicComponent()->getRadius()));
+			setTrajectoryComponent(new ConstantSpeedTrajectory(v));
 			shotRate = _shotRate;
 			shotRateCounter = shotRate;
 			setMode(ALIVE);

@@ -14,15 +14,15 @@ class SimpleShot: public Shot
 		{
 			pos = _pos;
 			opos = pos;
-			graphicComponent = new ShotGraphic(new Sprite(res, pos));
-			hitboxComponent = new CircularHitbox(pos, opos, graphicComponent->getRadius());
+			setGraphicComponent(new ShotGraphic(new Sprite(res, pos)));
+			setHitboxComponent(new CircularHitbox(pos, opos, getGraphicComponent()->getRadius()));
 			setMode(ALIVE);
 		}
 
 		virtual void onCollision(Thing &thing) 
 		{
-			((ShotGraphic *)graphicComponent)->setCollision();
-			trajectoryComponent = new ConstantSpeedTrajectory(pos, opos-pos);
+			((ShotGraphic *)getGraphicComponent())->setCollision();
+			setTrajectoryComponent(new ConstantSpeedTrajectory(opos-pos));
 			setMode(DYING);
 		}
 
