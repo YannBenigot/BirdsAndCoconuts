@@ -1,6 +1,7 @@
 #include "Game.hpp"
 #include "SimpleEnemy.hpp"
 #include "Debug.hpp"
+#include "Levels/Level1.hpp"
 
 Game::Game(): player(Player(*this))
 {
@@ -12,6 +13,8 @@ Game::Game(): player(Player(*this))
 		layers[i].create(640, 480);
 		sprites[i].setTexture(layers[i].getTexture());
 	}
+
+	level = new Level1(*this);
 }
 
 void Game::manageInput(sf::Event &ev)
@@ -37,11 +40,11 @@ template<class T> void cleanup(std::list<T *> &l)
 
 void Game::update()
 {
-	//level.update();
+	level->update();
 	player.update();
 
-	if(rand()%5 == 0) 
-		spawnEnemy(new SimpleEnemy(*this, ASBASE_TEST, sf::Vector2f(320, 300), sf::Vector2f(10, 0), 100, 10, 10));
+//	if(rand()%5 == 0) 
+//		spawnEnemy(new SimpleEnemy(*this, ASBASE_TEST, sf::Vector2f(320, 300), sf::Vector2f(10, 0), 100, 10, 10));
 
 	for(auto it = enemyShots.begin(); it != enemyShots.end(); it++)
 	{

@@ -25,3 +25,11 @@ inline std::ostream& operator<<(std::ostream &os, const sf::Vector2f &v)
 {
 	return os << "sf::Vector2f(" << v.x << ", " << v.y << ")";
 }
+
+namespace Vector2
+{
+	extern sf::Vector2f Zero;
+
+	sf::Vector2f radial(float angle);
+}
+

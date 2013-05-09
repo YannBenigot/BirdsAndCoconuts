@@ -1,17 +1,22 @@
+#ifndef _LEVEL_HPP
+#define _LEVEL_HPP
+
 #include <SFML/Graphics.hpp>
 
-class Level: public sf::Drawable
+class Game;
+
+class Level
 {
 	public:
 		Level(Game &game): game(game), counter(0) {};
 
-		Level *update() {counter++; return doUpdate;}
+		void update() {counter++; doUpdate();}
 
-		virtual Level *doUpdate() = 0;
+		virtual void doUpdate() = 0;
 
 	protected:
 		Game &game;
 		int counter;
-		virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const = 0;
 };
-			
+
+#endif
