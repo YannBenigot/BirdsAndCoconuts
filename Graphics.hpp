@@ -1,6 +1,10 @@
 #ifndef _GRAPHICS_HPP
 #define _GRAPHICS_HPP
 
+#ifndef M_PI
+#define M_PI 3.1415926535897
+#endif
+
 #include <SFML/Graphics.hpp>
 
 class Layer: public sf::RenderTexture
