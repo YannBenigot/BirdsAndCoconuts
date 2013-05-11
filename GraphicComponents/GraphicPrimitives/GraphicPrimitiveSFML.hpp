@@ -13,7 +13,7 @@ class GraphicPrimitiveSFMLTransformable: public GraphicPrimitive
 		GraphicPrimitiveSFMLTransformable(sf::Transformable &transformable): transformable(&transformable) {}
 
 		virtual void rotate(float angle) {transformable->setRotation(angle);};
-		virtual void scale(sf::Vector2f factor) {transformable->setScale(factor);};
+		virtual void scale(Vector2f factor) {transformable->setScale(factor);};
 };
 
 class GraphicPrimitiveSFMLSprite: public GraphicPrimitiveSFMLTransformable

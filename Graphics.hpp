@@ -6,6 +6,7 @@
 #endif
 
 #include <SFML/Graphics.hpp>
+#include "Vector.hpp"
 
 class Layer: public sf::RenderTexture
 {
@@ -31,8 +32,8 @@ class Transformable: public Drawable
 {
 	public:
 		virtual void rotate(float angle) = 0;
-		virtual void scale(float factor) {scale(sf::Vector2f(factor, factor));};
-		virtual void scale(sf::Vector2f factor) = 0;
+		virtual void scale(float factor) {scale(Vector2f(factor, factor));};
+		virtual void scale(Vector2f factor) = 0;
 		virtual void setOpacity(float ratio) = 0;
 };
 

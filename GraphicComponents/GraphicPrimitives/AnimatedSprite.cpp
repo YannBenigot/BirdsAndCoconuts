@@ -9,7 +9,7 @@ const int SHADOW_X = 5, SHADOW_Y = 5;
 //#define SHADOW_X (x-320)/10
 //#define SHADOW_Y (y-240)/10
 
-AnimatedSprite::AnimatedSprite(AnimatedSpriteBaseResource asBaseRes, sf::Vector2f &pos, int speed, bool loop): GraphicPrimitiveSFMLSprite(sprite), speed(speed), counter(speed), mode(0), pos(pos), asbase(ResourceManager::get()->getASBase(asBaseRes)), loop(loop)
+AnimatedSprite::AnimatedSprite(AnimatedSpriteBaseResource asBaseRes, Vector2f &pos, int speed, bool loop): GraphicPrimitiveSFMLSprite(sprite), speed(speed), counter(speed), mode(0), pos(pos), asbase(ResourceManager::get()->getASBase(asBaseRes)), loop(loop)
 {
 	sprite.setTexture(asbase.texture, true);
 

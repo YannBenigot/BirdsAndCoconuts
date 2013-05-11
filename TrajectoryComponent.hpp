@@ -8,12 +8,12 @@ class TrajectoryComponent
 	public:
 		TrajectoryComponent() {pos = nullptr;}
 
-		void init(sf::Vector2f &_pos) {pos = &_pos; onInit();}
+		void init(Vector2f &_pos) {pos = &_pos; onInit();}
 		virtual void onInit() {};
 
 		virtual void updatePosition() = 0;
 	protected:
-		sf::Vector2f *pos;
+		Vector2f *pos;
 };
 
 #endif

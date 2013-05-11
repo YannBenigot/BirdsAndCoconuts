@@ -8,7 +8,7 @@
 class SimpleEnemy: public Enemy
 {
 	public:
-		SimpleEnemy(Game &game, AnimatedSpriteBaseResource res, sf::Vector2f _pos, sf::Vector2f v, int life, int _shotRate, int spriteSpeed): Enemy(life), game(game)
+		SimpleEnemy(Game &game, AnimatedSpriteBaseResource res, Vector2f _pos, Vector2f v, int life, int _shotRate, int spriteSpeed): Enemy(life), game(game)
 		{
 			pos = _pos;
 			opos = _pos;
@@ -25,7 +25,7 @@ class SimpleEnemy: public Enemy
 			shotRateCounter--;
 			if(shotRateCounter < 0)
 			{
-				game.spawnEnemyShot(new RadialShot(pos, sf::Vector2f(pos.y-opos.y, opos.x-pos.x)));
+				game.spawnEnemyShot(new RadialShot(pos, Vector2f(pos.y-opos.y, opos.x-pos.x)));
 				shotRateCounter = shotRate;
 			}
 		}

@@ -6,7 +6,7 @@
 class ConstantSpeedTrajectory: public TrajectoryComponent
 {
 	public:
-		ConstantSpeedTrajectory(sf::Vector2f v): v(v) {};
+		ConstantSpeedTrajectory(Vector2f v): v(v) {};
 
 		virtual void updatePosition()
 		{
@@ -14,7 +14,7 @@ class ConstantSpeedTrajectory: public TrajectoryComponent
 		}
 
 	private:
-		sf::Vector2f v;
+		Vector2f v;
 };
 
 #endif

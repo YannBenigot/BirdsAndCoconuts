@@ -6,7 +6,7 @@
 class CircularHitbox: public HitboxComponent
 {
 	public:
-		CircularHitbox(sf::Vector2f &_pos, sf::Vector2f &_opos, float _R);
+		CircularHitbox(Vector2f &_pos, Vector2f &_opos, float _R);
 
 		virtual bool collision(HitboxComponent &hb);
 

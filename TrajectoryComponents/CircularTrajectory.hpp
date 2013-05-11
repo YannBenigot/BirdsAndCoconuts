@@ -7,21 +7,21 @@
 class CircularTrajectory: public TrajectoryComponent
 {
 	public:
-		CircularTrajectory(sf::Vector2f _center, float _R, float _initialAngle, float _w): center(_center), R(_R), w(_w), angle(_initialAngle) {};
+		CircularTrajectory(Vector2f _center, float _R, float _initialAngle, float _w): center(_center), R(_R), w(_w), angle(_initialAngle) {};
 
 		virtual void onInit()
 		{
-			*pos = center + R * Vector2::radial(angle);
+			*pos = center + R * Vector2fHelper::radial(angle);
 		}
 
 		virtual void updatePosition()
 		{
 			angle += w;
-			*pos = center + R * Vector2::radial(angle);
+			*pos = center + R * Vector2fHelper::radial(angle);
 		}
 
 	private:
-		sf::Vector2f center;
+		Vector2f center;
 		float R;
 		float w;
 		float angle;

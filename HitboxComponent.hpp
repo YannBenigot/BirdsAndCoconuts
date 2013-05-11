@@ -1,12 +1,12 @@
 #ifndef _HITBOX_HPP
 #define _HITBOX_HPP
 
-#include <SFML/Graphics.hpp>
+#include "Vector.hpp"
 
 class HitboxComponent
 {
 	public:
-		HitboxComponent(sf::Vector2f &_pos, sf::Vector2f &_opos);
+		HitboxComponent(Vector2f &_pos, Vector2f &_opos);
 
 		virtual void update() {};
 
@@ -15,7 +15,7 @@ class HitboxComponent
 		static float GetColTime(HitboxComponent &ha, HitboxComponent &hb);
 
 	protected:
-		sf::Vector2f &pos, &opos;
+		Vector2f &pos, &opos;
 };
 
 #endif

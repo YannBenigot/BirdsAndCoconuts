@@ -5,7 +5,7 @@
 class RadialShot: public SimpleShot
 {
 	public:
-		RadialShot(sf::Vector2f _pos, sf::Vector2f v, TextureResource res = SHOT_DEFAULT): SimpleShot(res, _pos), v(v)
+		RadialShot(Vector2f _pos, Vector2f v, TextureResource res = SHOT_DEFAULT): SimpleShot(res, _pos), v(v)
 		{
 //			if(v.x != 0 || v.y != 0) 
 //				graphicComponent->rotate(atan2(v.y, v.x));
@@ -13,6 +13,6 @@ class RadialShot: public SimpleShot
 		};
 
 	private:
-		sf::Vector2f v;
+		Vector2f v;
 };
 			

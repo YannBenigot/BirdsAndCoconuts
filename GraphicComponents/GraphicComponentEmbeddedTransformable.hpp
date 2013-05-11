@@ -12,6 +12,6 @@ class GraphicComponentEmbeddedTransformable: public GraphicComponent
 		virtual void draw(Layer *layers) const {transformable->draw(layers);};
 		virtual void rotate(float angle) {transformable->rotate(angle);};
 		virtual void scale(float factor) {transformable->scale(factor);}
-		virtual void scale(sf::Vector2f factor) {transformable->scale(factor);}
+		virtual void scale(Vector2f factor) {transformable->scale(factor);}
 		virtual void setOpacity(float ratio) {transformable->setOpacity(ratio);}
 };

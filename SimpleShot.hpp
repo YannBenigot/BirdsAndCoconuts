@@ -10,7 +10,7 @@
 class SimpleShot: public Shot
 {
 	public:
-		SimpleShot(TextureResource res, sf::Vector2f _pos)
+		SimpleShot(TextureResource res, Vector2f _pos)
 		{
 			pos = _pos;
 			opos = pos;

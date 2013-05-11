@@ -1,9 +1,9 @@
 #include "Vector.hpp"
 
-sf::Vector2f Vector2::Zero(0, 0);
+Vector2f Vector2fHelper::Zero(0, 0);
 
-sf::Vector2f Vector2::radial(float angle)
+Vector2f Vector2fHelper::radial(float angle)
 {
-	return sf::Vector2f(cos(angle), sin(angle));
+	return Vector2f(cos(angle), sin(angle));
 }
 

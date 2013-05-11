@@ -7,7 +7,7 @@
 class AnimatedSprite : public GraphicPrimitiveSFMLSprite
 {
 	public:
-		AnimatedSprite(AnimatedSpriteBaseResource asBaseRes, sf::Vector2f &pos, int speed, bool loop=true);
+		AnimatedSprite(AnimatedSpriteBaseResource asBaseRes, Vector2f &pos, int speed, bool loop=true);
 		~AnimatedSprite();
 
 		void setSpeed(int speed);
@@ -26,7 +26,7 @@ class AnimatedSprite : public GraphicPrimitiveSFMLSprite
 		int mode;
 		int speed;
 		int counter;
-		sf::Vector2f &pos;
+		Vector2f &pos;
 
 		bool flipped;
 		bool loop;

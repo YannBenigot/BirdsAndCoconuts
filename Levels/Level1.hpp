@@ -11,7 +11,7 @@ class Level1: public Level
 		{
 			if(counter == 100)
 			{
-				game.spawnEnemy(new Bird(Vector2::Zero, new CircularTrajectory(sf::Vector2f(320, 0), 320, -M_PI, -0.01)));
+				game.spawnEnemy(new Bird(Vector2fHelper::Zero, new CircularTrajectory(Vector2f(320, 0), 320, -M_PI, -0.01)));
 			}
 		}
 };

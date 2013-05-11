@@ -58,8 +58,8 @@ class Thing: public Drawable
 
 		void setMode(Mode _mode);
 
-		sf::Vector2f pos;
-		sf::Vector2f opos;
+		Vector2f pos;
+		Vector2f opos;
 
 		bool updatePosAppearing, updatePosDying;
 

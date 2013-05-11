@@ -22,7 +22,7 @@ class GraphicComponent: public Transformable
 		virtual void draw(Layer *layers) const = 0;
 		virtual void rotate(float angle) = 0;
 		virtual void scale(float factor) = 0;
-		virtual void scale(sf::Vector2f factor) = 0;
+		virtual void scale(Vector2f factor) = 0;
 
 };
 

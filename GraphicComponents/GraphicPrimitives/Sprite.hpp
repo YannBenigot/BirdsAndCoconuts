@@ -5,7 +5,7 @@
 class Sprite: public GraphicPrimitiveSFMLSprite
 {
 	public:
-		Sprite(TextureResource res, sf::Vector2f &pos): GraphicPrimitiveSFMLSprite(sprite), pos(pos)
+		Sprite(TextureResource res, Vector2f &pos): GraphicPrimitiveSFMLSprite(sprite), pos(pos)
 		{
 			sprite.setTexture(ResourceManager::get()->getTexture(res));
 			sprite.setOrigin(sprite.getLocalBounds().width/2, sprite.getLocalBounds().height/2);
@@ -30,6 +30,6 @@ class Sprite: public GraphicPrimitiveSFMLSprite
 		}
 
 	private:
-		sf::Vector2f &pos;
+		Vector2f &pos;
 		sf::Sprite sprite;
 };

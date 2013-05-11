@@ -22,6 +22,6 @@ void Player::manageInput(sf::Event &ev)
 
 void Player::updateAlive()
 {
-//	if(rand()%2 == 0) game.spawnFriendlyShot(new RadialShot(pos, sf::Vector2f(rand()%60-30, rand()%60-30), SHOT_BLUE));
-//	if(rand()%2 == 0) game.spawnEnemyShot(new RadialShot(sf::Vector2f(320, 400), sf::Vector2f(rand()%60-30, rand()%60-30)));
+//	if(rand()%2 == 0) game.spawnFriendlyShot(new RadialShot(pos, Vector2f(rand()%60-30, rand()%60-30), SHOT_BLUE));
+//	if(rand()%2 == 0) game.spawnEnemyShot(new RadialShot(Vector2f(320, 400), Vector2f(rand()%60-30, rand()%60-30)));
 }

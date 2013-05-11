@@ -6,7 +6,7 @@
 class Bird: public Enemy
 {
 	public:
-		Bird(sf::Vector2f _pos, TrajectoryComponent *trajectoryComponent): Enemy(100)
+		Bird(Vector2f _pos, TrajectoryComponent *trajectoryComponent): Enemy(100)
 		{
 			setGraphicComponent(new CompleteAnimatedSprite(ASBASE_TEST, pos, 10));
 			setHitboxComponent(new CircularHitbox(pos, opos, getGraphicComponent()->getRadius()));

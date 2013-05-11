@@ -44,7 +44,7 @@ void Game::update()
 	player.update();
 
 //	if(rand()%5 == 0) 
-//		spawnEnemy(new SimpleEnemy(*this, ASBASE_TEST, sf::Vector2f(320, 300), sf::Vector2f(10, 0), 100, 10, 10));
+//		spawnEnemy(new SimpleEnemy(*this, ASBASE_TEST, Vector2f(320, 300), Vector2f(10, 0), 100, 10, 10));
 
 	for(auto it = enemyShots.begin(); it != enemyShots.end(); it++)
 	{

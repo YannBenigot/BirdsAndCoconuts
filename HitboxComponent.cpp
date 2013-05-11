@@ -3,14 +3,14 @@
 #include "Vector.hpp"
 #include "Debug.hpp"
 
-HitboxComponent::HitboxComponent(sf::Vector2f &_pos, sf::Vector2f &_opos) : pos(_pos), opos(_opos)
+HitboxComponent::HitboxComponent(Vector2f &_pos, Vector2f &_opos) : pos(_pos), opos(_opos)
 {
 }
 
 float HitboxComponent::GetMinDist(HitboxComponent &ha, HitboxComponent &hb)
 {
-	sf::Vector2f orig = ha.opos-hb.opos;
-	sf::Vector2f speed = (ha.pos-ha.opos)-(hb.pos-hb.opos);
+	Vector2f orig = ha.opos-hb.opos;
+	Vector2f speed = (ha.pos-ha.opos)-(hb.pos-hb.opos);
 	float minDistTime = - (speed | orig) / sqnorm(speed);
 
 	//DBG(orig << " - " << speed << " - mD = " << minDistTime);
@@ -28,8 +28,8 @@ float HitboxComponent::GetMinDist(HitboxComponent &ha, HitboxComponent &hb)
 
 float HitboxComponent::GetColTime(HitboxComponent &ha, HitboxComponent &hb)
 {
-	sf::Vector2f orig = ha.opos-hb.opos;
-	sf::Vector2f speed = (ha.pos-ha.opos)-(hb.pos-hb.opos);
+	Vector2f orig = ha.opos-hb.opos;
+	Vector2f speed = (ha.pos-ha.opos)-(hb.pos-hb.opos);
 	float minDistTime = - (speed | orig) / sqnorm(speed);
 
 	if(minDistTime < 0)

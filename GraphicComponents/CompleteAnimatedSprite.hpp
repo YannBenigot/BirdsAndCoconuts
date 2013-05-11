@@ -7,7 +7,7 @@
 class CompleteAnimatedSprite: public GraphicComponentEmbeddedTransformable
 {
 	public:
-		CompleteAnimatedSprite(AnimatedSpriteBaseResource res, sf::Vector2f &pos, int speed): asprite(AnimatedSprite(res, pos, speed)), GraphicComponentEmbeddedTransformable(asprite) {};
+		CompleteAnimatedSprite(AnimatedSpriteBaseResource res, Vector2f &pos, int speed): asprite(AnimatedSprite(res, pos, speed)), GraphicComponentEmbeddedTransformable(asprite) {};
 		virtual ~CompleteAnimatedSprite() {};
 		virtual void updateCommon() {asprite.update();};
 
@@ -21,6 +21,6 @@ class CompleteAnimatedSprite: public GraphicComponentEmbeddedTransformable
 	private:
 };
 
-//CompleteAnimatedSprite::CompleteAnimatedSprite(AnimatedSpriteBaseRessource res, sf::Vector2f &pos, int speed): asprite(AnimatedSprite(res, pos, speed)) {};
+//CompleteAnimatedSprite::CompleteAnimatedSprite(AnimatedSpriteBaseRessource res, Vector2f &pos, int speed): asprite(AnimatedSprite(res, pos, speed)) {};
 
 #endif
