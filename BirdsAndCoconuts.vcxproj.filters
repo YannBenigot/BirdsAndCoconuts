@@ -13,135 +13,156 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
+    <Filter Include="GraphicComponents">
+      <UniqueIdentifier>{22b117b3-662e-4662-bd6c-383d7a0eb20b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicPrimitives">
+      <UniqueIdentifier>{4ec57ffb-c394-43bc-b288-3a4ca0569896}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="HitboxComponents">
+      <UniqueIdentifier>{3674d1a7-1f71-4716-a3a6-f4f0784a1d85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TrajectoryComponents">
+      <UniqueIdentifier>{eff02fa6-ac49-4ff6-a99f-a7228be1f024}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Things">
+      <UniqueIdentifier>{d30850a5-6324-491a-aff4-d36a4efe312e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Levels">
+      <UniqueIdentifier>{fed8b132-000f-48b7-9bf8-5b58ef297c51}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Base">
+      <UniqueIdentifier>{3e9a1f9b-e0a2-444f-aab5-6b2222a9632a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Enemy.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Game.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="HitboxComponent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ResourceManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Thing.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Vector.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="graphiccomponents\graphicprimitives\AnimatedSprite.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>GraphicPrimitives</Filter>
     </ClCompile>
     <ClCompile Include="hitboxcomponents\CircularHitbox.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>HitboxComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Things</Filter>
     </ClCompile>
     <ClCompile Include="hitboxcomponents\RectangularHitbox.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>HitboxComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Things</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="HitboxComponent.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceManager.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Thing.cpp">
+      <Filter>Base</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector.cpp">
+      <Filter>Base</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Debug.hpp">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="graphiccomponents\GraphicComponentEmbeddedTransformable.hpp">
+      <Filter>GraphicComponents</Filter>
     </ClInclude>
     <ClInclude Include="Enemy.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Game.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GraphicComponent.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="HitboxComponent.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Level.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Things</Filter>
     </ClInclude>
     <ClInclude Include="Player.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="RadialShot.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="ResourceManager.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Shot.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SimpleEnemy.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="SimpleShot.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Thing.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TrajectoryComponent.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Vector.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="enemies\Bird.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="graphiccomponents\CompleteAnimatedSprite.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="graphiccomponents\GraphicComponentEmbeddedTransformable.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="graphiccomponents\GraphicPrimitive.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="graphiccomponents\ShotGraphic.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="graphiccomponents\graphicprimitives\AnimatedSprite.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="graphiccomponents\graphicprimitives\GraphicPrimitiveSFML.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="graphiccomponents\graphicprimitives\Sprite.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hitboxcomponents\CircularHitbox.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hitboxcomponents\LineHitbox.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="hitboxcomponents\RectangularHitbox.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="levels\Level1.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="trajectorycomponents\CircularTrajectory.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="trajectorycomponents\ConstantSpeedTrajectory.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>Things</Filter>
     </ClInclude>
     <ClInclude Include="trajectorycomponents\PlayerTrajectory.hpp">
-      <Filter>Header Files</Filter>
+      <Filter>TrajectoryComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="graphiccomponents\ShotGraphic.hpp">
+      <Filter>GraphicComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="graphiccomponents\graphicprimitives\GraphicPrimitiveSFML.hpp">
+      <Filter>GraphicPrimitives</Filter>
+    </ClInclude>
+    <ClInclude Include="hitboxcomponents\CircularHitbox.hpp">
+      <Filter>HitboxComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="trajectorycomponents\CircularTrajectory.hpp">
+      <Filter>TrajectoryComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="graphiccomponents\CompleteAnimatedSprite.hpp">
+      <Filter>GraphicComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="trajectorycomponents\ConstantSpeedTrajectory.hpp">
+      <Filter>TrajectoryComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="levels\Level1.hpp">
+      <Filter>Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="RadialShot.hpp">
+      <Filter>Things</Filter>
+    </ClInclude>
+    <ClInclude Include="Shot.hpp">
+      <Filter>Things</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleEnemy.hpp">
+      <Filter>Things</Filter>
+    </ClInclude>
+    <ClInclude Include="SimpleShot.hpp">
+      <Filter>Things</Filter>
+    </ClInclude>
+    <ClInclude Include="graphiccomponents\graphicprimitives\Sprite.hpp">
+      <Filter>GraphicPrimitives</Filter>
+    </ClInclude>
+    <ClInclude Include="hitboxcomponents\LineHitbox.hpp">
+      <Filter>HitboxComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="hitboxcomponents\RectangularHitbox.hpp">
+      <Filter>HitboxComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="graphiccomponents\graphicprimitives\AnimatedSprite.hpp">
+      <Filter>GraphicPrimitives</Filter>
+    </ClInclude>
+    <ClInclude Include="enemies\Bird.hpp">
+      <Filter>Things</Filter>
+    </ClInclude>
+    <ClInclude Include="Debug.hpp">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.hpp">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicComponent.hpp">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="graphiccomponents\GraphicPrimitive.hpp">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Graphics.hpp">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="HitboxComponent.hpp">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.hpp">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceManager.hpp">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Thing.hpp">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="TrajectoryComponent.hpp">
+      <Filter>Base</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector.hpp">
+      <Filter>Base</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
