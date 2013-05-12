@@ -1,3 +1,6 @@
+#ifndef _SPRITE_HPP
+#define _SPRITE_HPP
+
 #include "ResourceManager.hpp"
 #include "Debug.hpp"
 #include "GraphicPrimitiveSFML.hpp"
@@ -33,3 +36,5 @@ class Sprite: public GraphicPrimitiveSFMLSprite
 		Vector2f &pos;
 		sf::Sprite sprite;
 };
+
+#endif

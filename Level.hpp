@@ -1,11 +1,11 @@
 #ifndef _LEVEL_HPP
 #define _LEVEL_HPP
 
-#include <SFML/Graphics.hpp>
+#include "Graphics.hpp"
 
 class Game;
 
-class Level
+class Level: public Drawable
 {
 	public:
 		Level(Game &game): game(game), counter(0) {};

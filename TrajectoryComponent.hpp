@@ -1,7 +1,7 @@
 #ifndef _TRAJECTORY_HPP
 #define _TRAJECTORY_HPP
 
-#include <SFML/Graphics.hpp>
+#include <Vector.hpp>
 
 class TrajectoryComponent
 {

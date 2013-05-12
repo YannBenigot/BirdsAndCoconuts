@@ -121,6 +121,7 @@ void ResourceManager::init()
 	addTexture(SHOT_GREY, "shot_grey.png");*/
 	addTexture(SHOT_BLUE, "shot_blue.png");
 	addTexture(SHOT_DEFAULT, "shot.png");
+	addTexture(LEVEL1_BACKGROUND, "Levels/level1_bg.png");
 
 	/*addAnimatedSpriteBase(PLAYER, "player.png", 32, 32);*/
 	addAnimatedSpriteBase(ASBASE_TEST, "test.png", 32, 32);

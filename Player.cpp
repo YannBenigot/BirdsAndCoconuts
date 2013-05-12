@@ -8,7 +8,7 @@
 
 Player::Player(Game &game): caSprite(CompleteAnimatedSprite(ASBASE_TEST, pos, 10)), game(game)
 {
-	pos.x = 320; pos.y = 240;
+	pos.x = Layer::width/2; pos.y = Layer::height/2;
 	setGraphicComponent(&caSprite);
 	setHitboxComponent(new CircularHitbox(pos, opos, 1));
 	srand(time(NULL));

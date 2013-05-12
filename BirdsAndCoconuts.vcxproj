@@ -49,6 +49,7 @@
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>C:\Users\Yann\Dropbox\Danmaku;C:\Program Files %28x86%29\SFML-2.0\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <BrowseInformation>true</BrowseInformation>
     </ClCompile>
     <Link>
       <TargetMachine>MachineX86</TargetMachine>
@@ -57,6 +58,9 @@
       <AdditionalLibraryDirectories>C:\Program Files %28x86%29\SFML-2.0\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-graphics-d.lib;sfml-window-d.lib;sfml-audio-d.lib;sfml-system-d.lib;%(AdditionalDependencies);sfml-main-d.lib</AdditionalDependencies>
     </Link>
+    <Bscmake>
+      <PreserveSbr>true</PreserveSbr>
+    </Bscmake>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -77,6 +81,7 @@
     <ClCompile Include="Enemy.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="graphiccomponents\graphicprimitives\AnimatedSprite.cpp" />
+    <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="HitboxComponent.cpp" />
     <ClCompile Include="hitboxcomponents\CircularHitbox.cpp" />
     <ClCompile Include="hitboxcomponents\RectangularHitbox.cpp" />
@@ -84,6 +89,7 @@
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="ResourceManager.cpp" />
     <ClCompile Include="Thing.cpp" />
+    <ClCompile Include="TrajectoryComponents\PlayerTrajectory.cpp" />
     <ClCompile Include="Vector.cpp" />
   </ItemGroup>
   <ItemGroup>

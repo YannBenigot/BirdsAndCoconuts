@@ -10,9 +10,12 @@ Game::Game(): player(Player(*this))
 
 	for(int i=0; i<Layer::COUNT; i++)
 	{
-		layers[i].create(640, 480);
+		sprites[i].setPosition(sf::Vector2f(15, 15));
 		sprites[i].setTexture(layers[i].getTexture());
 	}
+
+	hudTex.loadFromFile("hud.png");
+	hud.setTexture(hudTex);
 
 	level = new Level1(*this);
 }
@@ -43,9 +46,6 @@ void Game::update()
 	level->update();
 	player.update();
 
-//	if(rand()%5 == 0) 
-//		spawnEnemy(new SimpleEnemy(*this, ASBASE_TEST, Vector2f(320, 300), Vector2f(10, 0), 100, 10, 10));
-
 	for(auto it = enemyShots.begin(); it != enemyShots.end(); it++)
 	{
 		Shot &shot = **it;
@@ -70,17 +70,6 @@ void Game::update()
 				shot.onCollision(enemy);
 			}
 		}
-
-		/* To remove */
-		for(auto it = enemyShots.begin(); it != enemyShots.end(); it++)
-		{
-			Shot &enShot = **it;
-			if(enShot.collision(shot))
-			{
-				shot.onCollision(enShot);
-				enShot.onCollision(shot);
-			}
-		}
 	}
 
 	for(auto it = enemies.begin(); it != enemies.end(); it++)
@@ -100,10 +89,10 @@ template<class T> void listDraw (const std::list<T *> &l, Layer *layers)
 
 void Game::draw(sf::RenderTarget &target, sf::RenderStates states) const
 {
-//	level.draw(target, states);
 	for(int i=0; i<Layer::COUNT; i++)
 		layers[i].clear(sf::Color(255, 255, 255, 0));
 	layers[Layer::BACKGROUND].clear(sf::Color(128, 128, 128, 255));
+	level->draw(layers);
 	listDraw<Shot>(playerShots, layers);
 	listDraw<Shot>(enemyShots, layers);
 	listDraw<Enemy>(enemies, layers);
@@ -113,4 +102,5 @@ void Game::draw(sf::RenderTarget &target, sf::RenderStates states) const
 		layers[i].display();
 		target.draw(sprites[i]);
 	}
+	target.draw(hud);
 }

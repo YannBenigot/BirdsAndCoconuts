@@ -25,9 +25,14 @@ class Game: public sf::Drawable
 		virtual void draw(sf::RenderTarget &target, sf::RenderStates states) const;
 
 	private:
-		Level *level;
 		Layer *layers;
 		sf::Sprite *sprites;
+
+		/* HUD, to be replaced by HUD class */
+		sf::Texture hudTex;
+		sf::Sprite hud;
+
+		Level *level;
 
 		Player player;
 

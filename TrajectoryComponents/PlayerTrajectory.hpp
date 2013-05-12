@@ -3,16 +3,9 @@
 class PlayerTrajectory: public TrajectoryComponent
 {
 	public:
-		virtual void updatePosition()
-		{
-			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Left))
-				pos->x -= 1.0;
-			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Right))
-				pos->x += 1.0;
-			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Up))
-				pos->y -= 1.0;
-			if(sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
-				pos->y += 1.0;
-		}
+		virtual void updatePosition();
+
+	private:
+		static const float delta;
 };
 

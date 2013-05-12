@@ -2,7 +2,7 @@
 #define _GRAPHICS_HPP
 
 #ifndef M_PI
-#define M_PI 3.1415926535897
+#define M_PI 3.14159265358979323
 #endif
 
 #include <SFML/Graphics.hpp>
@@ -11,14 +11,17 @@
 class Layer: public sf::RenderTexture
 {
 	public:
-		enum Id
+		enum GameLayerId
 		{
 			BACKGROUND,
 			SHADOWS,
 			FOREGROUND,
-			HUD,
 			COUNT
 		};
+
+		Layer();
+
+		static const int width, height;
 };
 
 class Drawable
