@@ -16,12 +16,13 @@ class AnimatedSprite : public GraphicPrimitiveSFMLSprite
 		void setFlip(bool flipped);
 		bool isEndReached() {return endReached;};
 
-		virtual float getRadius() {return 1;}
+		virtual float getRadius() {return radius;}
 		virtual void update();
 		virtual void draw(Layer *layers) const;
 
 	private:
 		sf::Sprite sprite;
+		float radius;
 
 		int mode;
 		int speed;

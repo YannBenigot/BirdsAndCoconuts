@@ -8,7 +8,7 @@
 class SimpleEnemy: public Enemy
 {
 	public:
-		SimpleEnemy(Game &game, AnimatedSpriteBaseResource res, Vector2f _pos, Vector2f v, int life, int _shotRate, int spriteSpeed): Enemy(life), game(game)
+		SimpleEnemy(Game &_game, AnimatedSpriteBaseResource res, Vector2f _pos, Vector2f v, int life, int _shotRate, int spriteSpeed): Enemy(game, life)
 		{
 			pos = _pos;
 			opos = _pos;
@@ -32,6 +32,5 @@ class SimpleEnemy: public Enemy
 
 	private:
 		int shotRate, shotRateCounter;
-		Game &game;
 };
 

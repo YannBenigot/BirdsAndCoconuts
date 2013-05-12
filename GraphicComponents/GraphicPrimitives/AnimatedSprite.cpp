@@ -15,6 +15,8 @@ AnimatedSprite::AnimatedSprite(AnimatedSpriteBaseResource asBaseRes, Vector2f &p
 
 	sprite.setOrigin(asbase.width/2, asbase.height/2);
 
+	radius = (asbase.width > asbase.height ? asbase.height/2 : asbase.width/2);
+
 	flipped = false;
 	endReached = false;
 	counter = speed;

@@ -1,6 +1,6 @@
 #include "PlayerTrajectory.hpp"
 
-const float PlayerTrajectory::delta = 1.0;
+const float PlayerTrajectory::delta = 3.0;
 
 void PlayerTrajectory::updatePosition()
 {

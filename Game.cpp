@@ -22,7 +22,6 @@ Game::Game(): player(Player(*this))
 
 void Game::manageInput(sf::Event &ev)
 {
-	player.manageInput(ev);
 }
 
 template<class T> void cleanup(std::list<T *> &l)
@@ -61,9 +60,9 @@ void Game::update()
 	{
 		Shot &shot = **it;
 		shot.update();
-		for(auto it = enemies.begin(); it != enemies.end(); it++)
+		for(auto eit = enemies.begin(); eit != enemies.end(); eit++)
 		{
-			Enemy &enemy = **it;
+			Enemy &enemy = **eit;
 			if(shot.collision(enemy))
 			{
 				enemy.onCollision(shot);

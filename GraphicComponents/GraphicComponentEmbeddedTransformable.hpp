@@ -9,6 +9,7 @@ class GraphicComponentEmbeddedTransformable: public GraphicComponent
 		GraphicComponentEmbeddedTransformable(Transformable &_transformable): transformable(&_transformable) {};
 		void setTransformable(Transformable *_transformable) {transformable = _transformable;};
 
+		virtual float getRadius() {return transformable->getRadius();}
 		virtual void draw(Layer *layers) const {transformable->draw(layers);};
 		virtual void rotate(float angle) {transformable->rotate(angle);};
 		virtual void scale(float factor) {transformable->scale(factor);}

@@ -4,20 +4,18 @@
 #include "Thing.hpp"
 #include "Debug.hpp"
 
+class Game;
+
 class Enemy: public Thing
 {
 	public:
-		Enemy(int _life): life(_life) {};
+		Enemy(Game &_game, int _life): life(_life), game(_game) {};
 
-		virtual void onCollision(Thing &thing)
-		{
-			life -= thing.getDamage();
-			if(life <= 0)
-				setMode(DYING);
-		}
+		virtual void onCollision(Thing &thing);
 
 	protected:
 		int life;
+		Game &game;
 };
 
 #endif
